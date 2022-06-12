@@ -116,9 +116,88 @@
 }
 
 .circle {
-  height: 25px;
-  width: 25px;
-  background-color: #bbb;
+  height: 100px;
+  width: 100px;
+  background-color: #009dff;
   border-radius: 50%;
   display: inline-block;
+  border: 6px solid #454343;
+}
+
+.square {
+  height: 100px;
+  width: 100px;
+  background-color: #9c00ff;
+  display: inline-block;
+  border: 6px solid #454343;
+}
+
+.pipeRow {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pipeColumn {
+  flex: 1 0 21%;
+  height: 60px;
+  width: 60px;
+  background-color: blue;
+  margin: 2px;
+}
+
+.pipeColumn p::selection,
+.pipeColumn p::-moz-selection {
+  background: transparent;
+}
+
+@keyframes changeSize {
+  from {
+    width: 100px;
+    height: 100px;
+  }
+
+  to {
+    height: 150px;
+    width: 150px;
+  }
+}
+
+.circle, .square {
+  animation-duration: 1s;
+  animation-name: changeSize;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+/*.square {*/
+/*  animation-duration: 1s;*/
+/*  animation-name: changeSize;*/
+/*  animation-iteration-count: infinite;*/
+/*  animation-direction: alternate;*/
+/*}*/
+
+@keyframes changeSizeFast {
+  from {
+    width: 100px;
+    height: 100px;
+  }
+
+  to {
+    height: 150px;
+    width: 150px;
+  }
+}
+
+.circle:hover, .square:hover {
+  animation-duration: 0.5s;
+  /*animation-name: changeSizeFast;*/
+  /*animation-iteration-count: infinite;*/
+  /*animation-direction: alternate;*/
+}
+
+.pipe {
+  height: 50px;
+  width: 100px;
+  background-color: #242424;
+
 }
